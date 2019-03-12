@@ -25,11 +25,13 @@ title: k8s intro + basics
 - automatic rollbacks & rollouts
 - community ;)
 
+
 ---
 
 ## k8s architecture
 
 - master
+- node workers / node pools
 - nodes
 - pods
 
@@ -138,6 +140,16 @@ kubectl get deployment -n <namespace>
 kubectl get pods --all-namespaces -o wide
 kubectl edit deployment <deployment-name>
 kubectl delete service <service-name>
+```
+
+---
+
+=======
+## Ex #0
+
+```
+minikube start --vm-driver=hyperkit
+minikube dashboard
 ```
 
 ---
