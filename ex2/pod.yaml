@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-echoserver
+spec:
+  containers:
+  - name: secret-echoserver
+    image: gcr.io/google_containers/echoserver:1.4
+    env:
+      - name: SECRET_USERNAME
+        value: ROOT
+      - name: SECRET_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: top-secret-password
+            key: password
