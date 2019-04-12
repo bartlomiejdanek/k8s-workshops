@@ -13,5 +13,5 @@ con = PG.connect \
 get '/' do
   rs_1 = con.exec 'SELECT VERSION()'
   rs_2 = con.exec 'SELECT NOW()'
-  "Hello from #{ENV.fetch('HOSTNAME')} | #{con.server_version} | #{rs_1.getvalue(0, 0)} | #{rs_2.getvalue(0, 0)}".strip
+  "Hello from #{ENV.fetch('HOSTNAME')} | #{con.server_version} | #{rs_1.getvalue(0, 0)} | #{rs_2.getvalue(0, 0)} | #{ARGV.inspect}".strip
 end

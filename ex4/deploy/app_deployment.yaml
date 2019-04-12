@@ -17,7 +17,9 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: bartlomiejdanek/app:stage_1
+        image: bartlomiejdanek/app:stage_2
+        command: ["ruby"]
+        args: ["/app/app.rb", "k8s"]
         env:
         - name: POSTGRES_HOST
           value: postgres
@@ -31,3 +33,14 @@ spec:
           value: Secret99
         ports:
         - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          tcpSocket:
+            port: 3000
+          initialDelaySeconds: 3
+          periodSeconds: 3
