@@ -1,5 +1,7 @@
 FROM ruby:2.6.2-alpine
 
+RUN apk add --update build-base postgresql-dev postgresql-client
+
 ENV APP_HOME /app/
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
