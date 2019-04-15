@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: <service-app-label>
+  name: <service-name>
+spec:
+  ports:
+  - nodePort: 30593
+    port: <port>
+    protocol: TCP
+    targetPort: <target-port>
+  selector:
+    app: <deployment-app-selector-name>
+  type: NodePort
