@@ -1,7 +1,6 @@
 FROM ruby:2.6.2-alpine
 
-ENV APP_HOME /app
-ENV HOME /root
+ENV APP_HOME /app/
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 COPY Gemfile* $APP_HOME
@@ -11,4 +10,4 @@ COPY . $APP_HOME
 
 ENV PORT 3000
 EXPOSE 3000
-CMD ["ruby", "app.rb"]
+CMD ["bundle", "exec", "ruby", "app.rb"]
