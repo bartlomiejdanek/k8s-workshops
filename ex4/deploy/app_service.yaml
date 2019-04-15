@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: sample-app
+  name: sample-app-service
+spec:
+  ports:
+  - nodePort: 30593
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: sample-app
+  type: NodePort

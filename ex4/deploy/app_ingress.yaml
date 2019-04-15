@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sample-app-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: sample-app-service
+          servicePort: 3000
