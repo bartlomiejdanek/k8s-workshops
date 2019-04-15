@@ -17,17 +17,6 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: bartlomiejdanek/app:stage_1
-        env:
-        - name: POSTGRES_HOST
-          value: postgres
-        - name: POSTGRES_PORT
-          value: "5432"
-        - name: POSTGRES_DATABASE
-          value: selleo_db
-        - name: POSTGRES_USER
-          value: selleo
-        - name: POSTGRES_PASSWORD
-          value: Secret99
+        image: bartlomiejdanek/app:stage_0
         ports:
         - containerPort: 3000
